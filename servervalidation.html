@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<script>
+			function VALIDATION() {
+				var name =
+					document.forms["RegForm"]["Name"];
+				var gender =
+					document.forms["RegForm"]["GENDER"];
+				var phone =
+					document.forms["RegForm"]["Telephone"];
+				var email =
+					document.forms["RegForm"]["email"];
+				var age =
+					document.forms["RegForm"]["Age"];
+				var address =
+					document.forms["RegForm"]["Address"];
+
+				if (name.value == "") {
+					window.alert("Please enter your name.");
+					name.focus();
+					return false;
+				}
+
+				if (address.value == "") {
+					window.alert("Please enter your address.");
+					address.focus();
+					return false;
+				}
+
+				if (email.value == "") {
+					window.alert(
+					"Please enter a valid e-mail address.");
+					email.focus();
+					return false;
+				}
+
+				if (phone.value == "") {
+					window.alert(
+					"Please enter your telephone number.");
+					phone.focus();
+					return false;
+				}
+
+				if (gender.value == "") {
+					window.alert("Please enter your password");
+					gender.focus();
+					return false;
+				}
+
+				if (age.selectedIndex > 20 || age.selectedIndex < 60) {
+					alert("Please enter your course.");
+					age.focus();
+					return false;
+				}
+
+				return true;
+			}
+		</script>
+
+		<style>
+			div {
+				box-sizing: border-box;
+				width: 100%;
+				border: 100px solid black;
+				float: left;
+				align-content: center;
+				align-items: center;
+			}
+
+			form {
+				margin: 0 auto;
+				width: 600px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1 style="text-align: center;">CLIENT SIDE FORM</h1>
+		<form name="RegForm" action="/submit.php"
+			onsubmit="return VALIDATION()" method="post">
+			<p>Name: <input type="text"
+							size="65" name="Name" /></p>
+			<br />
+			<p>Address: <input type="text"
+							size="65" name="Address" />
+		</p>
+			<br />
+			<p>E-mail Address: <input type="text"
+							size="65" name="EMail" /></p>
+			<br />
+			<p>Age: <input type="text"
+						size="65" name="age" /></p>
+			<br />
+			<p>Telephone: <input type="text"
+						size="65" name="Telephone" /></p>
+			<br />
+                <input type="submit"
+					value="send" name="Submit" />
+				<input type="reset"
+					value="Reset" name="Reset" />
+			</p>
+		</form>
+	</body>
+</html>
